@@ -1,0 +1,15 @@
+<h1>Mise à jour des produits : </h1>
+
+<table>
+<tr>
+	<th>Produit</th>
+	<th>Prix soldé</th>
+</tr>
+{% for product in products %}
+	<tr>
+    	<td>{{ product.name }}</td>
+    	<td>{{ product.discountedPrice }}</td>
+	</tr>
+{% endfor %}
+
+</table>

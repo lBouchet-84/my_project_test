@@ -1,0 +1,17 @@
+{% extends'layout.html.twig' %}
+
+{%block content %}
+
+<div class="top container">
+<center><h3>Formulaire création de produit</h3></center>
+
+{{ form_start(form) }}
+	{{ form_row(form.name) }}
+	{{ form_row(form.price) }}
+	{{ form_row(form.type) }}
+	{{ form_rest(form) }}
+	<center><button type="submit" class="btn btn-dark">Valider</button></center>
+{{ form_end(form) }}
+</div>
+
+{%endblock%}

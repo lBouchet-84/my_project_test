@@ -1,0 +1,29 @@
+{% extends'layout.html.twig' %}
+
+{%block content %}
+
+<div class="top container">
+<center><h3>Liste des Regles</h3></center>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Type</th>
+				<th>Regle</th>
+				<th>Pourcentage</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for discountRule in discountRules %}
+				<tr>
+					<td>{{ product.typeName(discountRule.type) }}</td>
+					<td>{{ discountRule.ruleExpression }} {{discountRule.priceLimit }}</td>
+					<td>{{ discountRule.discountPercent }}%</td>
+				</tr>
+			{% endfor %}
+
+		</tbody>
+	</table>
+
+</div>
+
+{%endblock%}

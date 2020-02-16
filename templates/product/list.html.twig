@@ -1,0 +1,31 @@
+{% extends'layout.html.twig' %}
+
+{%block content %}
+
+<div class="top container">
+<center><h3>Liste des Produits</h3></center>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Produit</th>
+				<th>Prix</th>
+				<th>Prix solde</th>
+				<th>Type</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for product in products %}
+				<tr>
+					<td><a href="{{ path('product_edit',{id:product.id}) }}">{{ product.name }}</a></td>
+					<td>{{ product.price }}</td>
+					<td>{{ product.DiscountedPrice }}</td>
+					<td>{{ product.typeName(product.type) }}</td>
+				</tr>
+			{% endfor %}
+
+		</tbody>
+	</table>
+
+</div>
+
+{%endblock%}
